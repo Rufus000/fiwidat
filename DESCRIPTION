@@ -1,0 +1,14 @@
+Package: fiwidat
+Title: Datasets for Vienna VetMedUni Statistics Class
+Version: 0.1
+Authors@R: 
+    person(given = "Thomas",
+           family = "Ruf",
+           role = c("aut", "cre"),
+           email = "thomas.ruf@vetmeduni.ac.at",
+           comment = c(ORCID = "0000-0002-9235-7079"))
+Description: Datasets used in an R introductory class at the Research Institute of Wildlife Ecology (FIWI). Note that variable names are partly in German. Several datasets are simulated. If so, this is indicated in the dataset help. 
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
