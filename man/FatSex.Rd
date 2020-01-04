@@ -22,7 +22,7 @@ Effects of body weight and gender on body fat content
 }
 \source{
 %%  ~~ reference to a publication or URL from which the data were obtained ~~
-T. Ruf simulated
+Grafen & Hails: Modern Statistics for the Life Sciences. Oxford University Press, Oxford, UK.
 }
 \references{
 %%  ~~ possibly secondary sources and usages ~~
