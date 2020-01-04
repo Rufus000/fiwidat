@@ -1,1 +1,4 @@
 exportPattern("^[[:alpha:]]+")
+importFrom("stats", "na.omit", "sd")
+importFrom("graphics", "par")
+importFrom("utils", "read.table", "write.table")
