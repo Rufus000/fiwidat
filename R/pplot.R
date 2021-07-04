@@ -3,7 +3,7 @@ require(ggplot2)
 
 
 
-pplot=function(model,xvar,by=NULL,breaks=NULL, partial=FAlSE,leg.name=NULL,leg.labs=NULL,cols=c("red","blue","green","purple"), transp=0.5, rsize=2,rcols=FALSE, rshapes=TRUE){
+pplot=function(model,xvar,by=NULL,breaks=NULL, partial=FALSE,leg.name=NULL,leg.labs=NULL,cols=c("red","blue","green","purple"), transp=0.5, rsize=2,rcols=FALSE, rshapes=TRUE){
 
   if (is.null(by)){
     p=visreg(model,xvar,plot=FALSE)
