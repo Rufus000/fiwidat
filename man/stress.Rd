@@ -5,7 +5,8 @@
 %%   ~~ data name/kind ... ~~
 }
 \description{
-Fecal stress hormones in female edible dormice as a function of age and reproductive state.
+Fecal stress hormones in female wild boars as a function of age and reproductive state.
+Note that females ar classified as juveniles in their first year of life, although they can reproduce.
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
 \usage{data("stress")}
@@ -26,7 +27,7 @@ T. Ruf simulated
 }
 \references{
 Further reading:
-Cornils JS, Hoelzl F, Huber N, Zink R, Gerritsmann H, Bieber C, Schwarzenberger F, Ruf T. The insensitive dormouse: reproduction skipping is not caused by chronic stress in Glis glis. Journal of Experimental Biology. 2018 Oct 15;221(20):jeb183558.
+Ahmad, Ejaz, Joe E. Brooks, Iftikhar Hussain, and M. Hafiz Khan. "Reproduction in Eurasian wild boar in central Punjab, Pakistan." Acta Theriologica 40, no. 2 (1995): 163-173.
 }
 \examples{
 data(stress)

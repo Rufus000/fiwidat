@@ -5,7 +5,7 @@
 Food Intake in Dormice
 }
 \description{
-Effects of gestation and lactation on food intakr in dormice
+Effects of gestation and lactation on food intake in dormice
 }
 \usage{data("repro")}
 \format{

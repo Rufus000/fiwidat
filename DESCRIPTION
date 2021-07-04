@@ -1,6 +1,6 @@
 Package: fiwidat
 Title: Datasets for Vienna VetMedUni Statistics Class
-Version: 0.1
+Version: 0.2
 Authors@R: 
     person(given = "Thomas",
            family = "Ruf",
@@ -13,5 +13,7 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports:
-	effects
-RoxygenNote: 6.1.1
+	effects,
+	ggplot2,
+	visreg
+
