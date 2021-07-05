@@ -15,5 +15,8 @@ LazyData: true
 Imports:
 	effects,
 	ggplot2,
-	visreg
+	visreg,
+	mgcv,
+	nlme
+
 
