@@ -9,7 +9,7 @@ Plots regression terms against their predictors.
 Generates ggplots based on library visreg
 }
 \usage{
-pplot (model,xvar,by=NULL,breaks=NULL, partial=FAlSE,
+pplot (model,xvar,by=NULL,breaks=NULL, partial=FALSE,
       leg.name=NULL,leg.labs=NULL,cols=c("red","blue","green","purple"),
       transp=0.5, rsize=2,rcols=FALSE, rshapes=TRUE)
 }
@@ -53,6 +53,7 @@ T. Ruf
 
 require(visreg)
 require(ggplot2)
+devAskNewPage(ask = FALSE)
 
 fit <- lm(Ozone ~ Solar.R + Wind * Temp, data=airquality)
 
@@ -63,10 +64,6 @@ pplot(fit,xvar="Wind",by="Temp", breaks=c(60,90),partial=TRUE,
 
 pplot(fit,xvar="Wind",by="Temp", breaks=c(3),partial=TRUE,
       leg.name="Temperature",leg.labs=c("cool","average","warm"),
-      cols=c("yellow","orange","red"),rcols=TRUE)
-
-pplot(fit,xvar="Wind",by="Temp", breaks=c(3),partial=TRUE,
-      leg.name="Temperature",leg.labs=c("cool","average","warm"),
       cols=c("yellow","orange","red"),rsize=3,rshapes=TRUE)
 
 pplot(fit,xvar="Wind",by="Temp", breaks=c(3),partial=FALSE,
@@ -74,11 +71,22 @@ pplot(fit,xvar="Wind",by="Temp", breaks=c(3),partial=FALSE,
       cols=c("yellow","orange","red"),rsize=3)+
       theme(legend.position = c(0.8, 0.8))
 
-pplot(fit,xvar="Solar.R",partial=TRUE) +
-  ylim(0,100)
+require(mgcv)
+require (nlme)
 
+mod.lme=lme(distance~age*Sex, random=~1|Subject, data=Orthodont)
+pplot(mod.lme,xvar="age",by="Sex",partial=TRUE,leg.name="Gender")
+# lme and lmer do no generate 95% confidence intervals
 
+mod.bam=bam(distance~age*Sex+s(Subject, bs = 're'), data=Orthodont)
+pplot(mod.bam,xvar="age",by="Sex")
+pplot(mod.bam,xvar="age",by="Sex",partial=TRUE,leg.name="Gender")
+# bam can be used to compute LINEAR mixed effects and generates confidence intervals.
+# Coefficients, t and p-values are virtually identical to lme and lmer.
 
+# pplot handles simple gams too.
+fit <- gam(Ozone ~ s(Solar.R) + s(Wind) + s(Temp), data=airquality)
+pplot(fit,xvar="Wind",partial=TRUE)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
