@@ -56,7 +56,7 @@ T. Ruf
 
 require(visreg)
 require(ggplot2)
-devAskNewPage(ask = FALSE)
+devAskNewPage(ask =TRUE)
 
 fit <- lm(Ozone ~ Solar.R + Wind * Temp, data=airquality)
 
@@ -78,12 +78,12 @@ require(mgcv)
 require (nlme)
 
 mod.lme=lme(distance~age*Sex, random=~1|Subject, data=Orthodont)
-pplot(mod.lme,xvar="age",by="Sex",partial=TRUE,leg.name="Gender")
+pplot(mod.lme,xvar="age",by="Sex",partial=TRUE,leg.name="Gender",type='contrast')
 # lme and lmer do no generate 95% confidence intervals
 
 mod.bam=bam(distance~age*Sex+s(Subject, bs = 're'), data=Orthodont)
-pplot(mod.bam,xvar="age",by="Sex")
-pplot(mod.bam,xvar="age",by="Sex",partial=TRUE,leg.name="Gender")
+pplot(mod.bam,xvar="age",by="Sex",type='contrast')
+pplot(mod.bam,xvar="age",by="Sex",partial=TRUE,leg.name="Gender",type='contrast')
 # bam can be used to compute LINEAR mixed effects and generates confidence intervals.
 # Coefficients, t and p-values are virtually identical to lme and lmer.
 
