@@ -9,7 +9,6 @@ Plots regression terms against their predictors.
 Generates ggplots based on library visreg
 }
 \usage{
-
 pplot=function (model, xvar, by = NULL, breaks = NULL, partial = FALSE,
           type = c("conditional", "contrast"), scale = c("linear",
         "response"), leg.name = NULL, leg.labs = NULL, cols = c("red",
@@ -23,7 +22,7 @@ pplot=function (model, xvar, by = NULL, breaks = NULL, partial = FALSE,
   \item{breaks}{ If a single number, number of levels. If 2 or more numbers, discrete values/levels of by.}
   \item{partial}{ Logical. Should residuals been shown?}
   \item{type}{Use 'contrast' for models with random factors}
-  \item{scale}{ Linear or response}
+  \item{scale}{ Linear or response.  If scale='response' for a glm, the inverse link function will be applied so that the model is plotted on the scale of the original response.}
   \item{leg.name}{ Optional. Name of legend.}
   \item{leg.labs}{ Optional. Legend labels.}
   \item{cols}{ Colors of confidence bands.}
@@ -79,7 +78,7 @@ require (nlme)
 
 mod.lme=lme(distance~age*Sex, random=~1|Subject, data=Orthodont)
 pplot(mod.lme,xvar="age",by="Sex",partial=TRUE,leg.name="Gender",type='contrast')
-# lme and lmer do no generate 95% confidence intervals
+
 
 mod.bam=bam(distance~age*Sex+s(Subject, bs = 're'), data=Orthodont)
 pplot(mod.bam,xvar="age",by="Sex",type='contrast')
