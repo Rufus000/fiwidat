@@ -27,7 +27,7 @@ a partial redidual plot is shown
 }
 \value{
 plots are created
-
+}
 \author{
 Thomas Ruf (thomas.p.ruf@me.com)
 }
