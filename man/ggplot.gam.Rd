@@ -16,7 +16,7 @@ ggplot.gam(model)
 a gam model
 }
  \item{conf}{
-a confidence ribbon is plotteded if conf=T
+a confidence ribbon is plotted if conf=T
 }
  \item{part}{
 a partial redidual plot is shown
