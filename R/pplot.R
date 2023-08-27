@@ -1,6 +1,3 @@
-
-
-
 pplot=function (model, xvar, by = NULL, breaks = NULL, partial = FALSE, 
           type = c("conditional", "contrast"), scale = c("linear", 
                                                          "response"), leg.name = NULL, leg.labs = NULL, cols = c("red", 
@@ -58,15 +55,13 @@ pplot=function (model, xvar, by = NULL, breaks = NULL, partial = FALSE,
         geom_ribbon(aes(ymin = visregLwr, ymax = visregUpr), 
                     fill = cols[1], alpha = transp) + geom_line(size = linesize) + 
         xlab(p$meta$x) + ylab(p$meta$y)
-      
     }
     if (partial == T) {
       plt = plt + geom_point(data = p$res, aes(x = p$res[, 
                                                          ix], y = visregRes), colour = rcolor, size = rsize, 
                              shape = "circle")
-      #plt = plt+geom_line(data=p$fit, aes(x = p$fit[, ix], y = p$fit$visregFit))+geom_line(linewidth=1.5)
+      plt = plt+geom_line(data=p$fit, aes(x = p$fit[, ix], y = p$fit$visregFit))+geom_line(linewidth=1.5)
     }
   }
   plt
 }
-
