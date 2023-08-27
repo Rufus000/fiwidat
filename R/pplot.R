@@ -64,7 +64,7 @@ pplot=function (model, xvar, by = NULL, breaks = NULL, partial = FALSE,
       plt = plt + geom_point(data = p$res, aes(x = p$res[, 
                                                          ix], y = visregRes), colour = rcolor, size = rsize, 
                              shape = "circle")
-      plt = plt+geom_line(data=p$fit, aes(x = p$fit[, ix], y = p$fit$visregFit))+geom_line(linewidth=1.5)
+      #plt = plt+geom_line(data=p$fit, aes(x = p$fit[, ix], y = p$fit$visregFit))+geom_line(linewidth=1.5)
     }
   }
   plt
